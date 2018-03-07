@@ -10,7 +10,7 @@ ACS files contain a recusive key-value structure with the following value types
 - `KUID-value`
 - `container-value`
 
-## Exampe ACS file
+## Example ACS file
 ```
 kuid                                        <kuid:123456:123456>
 username                                    "Name of item"
@@ -18,7 +18,7 @@ category-region                             "DE"
 
 mesh-table
 {
-    mesh                                    "main.fbx"
+    mesh                                    "main.im"
     autocreate                              1
 }
 
