@@ -75,7 +75,7 @@ kuid "kuid"
   }
 
 stringValue "string-value"
-  = '"' stringValue:([A-Za-z0-9_\-. ]*) '"' whitespace? {
+  = '"' stringValue:([^"\\]*) '"' whitespace? {
     return valueFormat(
       'string',
    	  stringValue.join('')

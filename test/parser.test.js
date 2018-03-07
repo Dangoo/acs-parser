@@ -14,7 +14,11 @@ it('Parses null-values correctly', () => {
 it('Parses string-values correctly', () => {
     const stringValues = [
         'key1 "value"',
-        'key2 "bar"'
+        'key2 "bar"',
+        'key3 "öäüßÖÄÜøØ"',
+        `key "new
+        
+        line"`
     ].concat('\n').join('\n');
 
     const parsed = acsParser.parse(stringValues);

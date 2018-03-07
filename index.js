@@ -205,8 +205,8 @@ function peg$parse(input, options) {
       peg$c29 = peg$otherExpectation("string-value"),
       peg$c30 = "\"",
       peg$c31 = peg$literalExpectation("\"", false),
-      peg$c32 = /^[A-Za-z0-9_\-. ]/,
-      peg$c33 = peg$classExpectation([["A", "Z"], ["a", "z"], ["0", "9"], "_", "-", ".", " "], false, false),
+      peg$c32 = /^[^"\\]/,
+      peg$c33 = peg$classExpectation(["\"", "\\"], true, false),
       peg$c34 = function(stringValue) {
           return valueFormat(
             'string',

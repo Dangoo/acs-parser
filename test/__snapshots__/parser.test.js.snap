@@ -145,6 +145,12 @@ Object {
 
 exports[`Parses string-values correctly 1`] = `
 Object {
+  "key": Object {
+    "type": "string",
+    "value": "new
+        
+        line",
+  },
   "key1": Object {
     "type": "string",
     "value": "value",
@@ -152,6 +158,10 @@ Object {
   "key2": Object {
     "type": "string",
     "value": "bar",
+  },
+  "key3": Object {
+    "type": "string",
+    "value": "öäüßÖÄÜøØ",
   },
 }
 `;
