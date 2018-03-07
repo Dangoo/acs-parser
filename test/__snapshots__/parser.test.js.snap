@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Parses container-values correctly 1`] = `
+Object {
+  "container-value": Object {
+    "type": "container-value",
+    "value": Object {
+      "nested-container-value": Object {
+        "type": "container-value",
+        "value": Object {
+          "nested-string": Object {
+            "type": "string",
+            "value": "Nested",
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Parses key-value-pairs correctly 1`] = `
+Object {
+  "container-value": Object {
+    "type": "container-value",
+    "value": Object {
+      "nested-string": Object {
+        "type": "string",
+        "value": "Nested",
+      },
+    },
+  },
+  "kuid": Object {
+    "type": "kuid",
+    "value": Object {
+      "contentID": "123456",
+      "userID": "123456",
+    },
+  },
+  "number": Object {
+    "type": "numeric-value",
+    "value": 2,
+  },
+  "string": Object {
+    "type": "string",
+    "value": "Test",
+  },
+}
+`;
+
+exports[`Parses kuid-values correctly 1`] = `
+Object {
+  "kuid": Object {
+    "type": "kuid",
+    "value": Object {
+      "contentID": "123456",
+      "userID": "123456",
+    },
+  },
+  "kuid-uppercase": Object {
+    "type": "kuid",
+    "value": Object {
+      "contentID": "123456",
+      "userID": "123456",
+    },
+  },
+  "kuid2": Object {
+    "type": "kuid2",
+    "value": Object {
+      "contentID": "123456",
+      "userID": "123456",
+      "version": 1,
+    },
+  },
+  "kuid2-uppercase": Object {
+    "type": "kuid2",
+    "value": Object {
+      "contentID": "123456",
+      "userID": "123456",
+      "version": 1,
+    },
+  },
+}
+`;
+
+exports[`Parses null-values correctly 1`] = `
+Object {
+  "key1": null,
+  "key2": null,
+}
+`;
+
+exports[`Parses numeric-array-values correctly 1`] = `
+Object {
+  "key1": Object {
+    "type": "numeric-array-value",
+    "value": Array [
+      1,
+      2,
+    ],
+  },
+  "key2": Object {
+    "type": "numeric-array-value",
+    "value": Array [
+      2,
+      4,
+    ],
+  },
+  "key3": Object {
+    "type": "numeric-array-value",
+    "value": Array [
+      10,
+      20,
+      30,
+      40,
+    ],
+  },
+}
+`;
+
+exports[`Parses numeric-values correctly 1`] = `
+Object {
+  "key1": Object {
+    "type": "numeric-value",
+    "value": 1,
+  },
+  "key2": Object {
+    "type": "numeric-value",
+    "value": 2,
+  },
+  "key3": Object {
+    "type": "numeric-value",
+    "value": 2.5,
+  },
+  "key4": Object {
+    "type": "numeric-value",
+    "value": 20,
+  },
+  "key5": Object {
+    "type": "numeric-value",
+    "value": 12345.123456,
+  },
+}
+`;
+
+exports[`Parses string-values correctly 1`] = `
+Object {
+  "key1": Object {
+    "type": "string",
+    "value": "value",
+  },
+  "key2": Object {
+    "type": "string",
+    "value": "bar",
+  },
+}
+`;
