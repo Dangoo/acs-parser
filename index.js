@@ -160,7 +160,7 @@ function peg$parse(input, options) {
       peg$c8 = peg$literalExpectation("}", false),
       peg$c9 = function(pairs) {
           return valueFormat(
-            'container-value',
+            'container',
             pairs.reduce(function(acc, item) {
               return Object.assign(acc, item);
             }, {})
@@ -186,7 +186,7 @@ function peg$parse(input, options) {
           return valueFormat(
             'kuid2',
             {
-          	userID: userID.join(''),
+          	  userID: userID.join(''),
               contentID: contentID.join(''),
               version: parseInt(version.join(''), 10)
             }
@@ -197,7 +197,7 @@ function peg$parse(input, options) {
           return valueFormat(
             'kuid',
             {
-          	userID: userID.join(''),
+          	  userID: userID.join(''),
               contentID: contentID.join('')
             }
           );
@@ -216,7 +216,7 @@ function peg$parse(input, options) {
       peg$c35 = peg$otherExpectation("numeric-array-value"),
       peg$c36 = function(numbers, lastNumber) {
         	return valueFormat(
-            'numeric-array-value',
+            'numeric-array',
             numbers.map(function(num){return num[0]}).concat(lastNumber)
           );
         },
@@ -225,10 +225,10 @@ function peg$parse(input, options) {
       peg$c39 = peg$literalExpectation(",", false),
       peg$c40 = peg$otherExpectation("numeric-value"),
       peg$c41 = function(number) {
-        	return {
-            value: number,
-            type: 'numeric-value'
-          };
+        	return valueFormat(
+            'number',
+            number
+          );
         },
       peg$c42 = peg$otherExpectation("number"),
       peg$c43 = /^[\-]/,
@@ -443,13 +443,13 @@ function peg$parse(input, options) {
       s2 = peg$parsekey();
       if (s2 !== peg$FAILED) {
         s3 = peg$parsewhitespace();
+        if (s3 === peg$FAILED) {
+          s3 = peg$parseeol();
+        }
         if (s3 !== peg$FAILED) {
           s4 = peg$parsevalue();
           if (s4 !== peg$FAILED) {
             s5 = peg$parseeol();
-            if (s5 === peg$FAILED) {
-              s5 = peg$parseeof();
-            }
             if (s5 !== peg$FAILED) {
               peg$savedPos = s0;
               s1 = peg$c2(s2, s4);

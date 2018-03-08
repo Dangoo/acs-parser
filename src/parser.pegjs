@@ -22,7 +22,7 @@ acsTextFile
   }
 
 keyValuePair "key-value-pair"
-  = lineStart key:key whitespace value:value (eol / eof) {
+  = lineStart key:key (whitespace / eol) value:value eol {
     var obj = {};
     obj[key] = value;
   	return obj;
@@ -40,7 +40,7 @@ value "value"
 containerValue "container-value"
   = eol? whitespace? '{' eol pairs:keyValuePair+ lineStart '}' {
     return valueFormat(
-      'container-value',
+      'container',
       pairs.reduce(function(acc, item) {
         return Object.assign(acc, item);
       }, {})
@@ -56,7 +56,7 @@ kuid2 "kuid2"
     return valueFormat(
       'kuid2',
       {
-    	userID: userID.join(''),
+    	  userID: userID.join(''),
         contentID: contentID.join(''),
         version: parseInt(version.join(''), 10)
       }
@@ -68,7 +68,7 @@ kuid "kuid"
     return valueFormat(
       'kuid',
       {
-    	userID: userID.join(''),
+    	  userID: userID.join(''),
         contentID: contentID.join('')
       }
     );
@@ -85,7 +85,7 @@ stringValue "string-value"
 numericArrayValue "numeric-array-value"
   = numbers:(number arraySeparator)+ lastNumber:number whitespace? {
   	return valueFormat(
-      'numeric-array-value',
+      'numeric-array',
       numbers.map(function(num){return num[0]}).concat(lastNumber)
     );
   }
@@ -95,10 +95,10 @@ arraySeparator "array-separator"
 
 numericValue "numeric-value"
   = number:number whitespace? {
-  	return {
-      value: number,
-      type: 'numeric-value'
-    };
+  	return valueFormat(
+      'number',
+      number
+    );
   }
 
 /**

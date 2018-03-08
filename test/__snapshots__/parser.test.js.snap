@@ -3,10 +3,10 @@
 exports[`Parses container-values correctly 1`] = `
 Object {
   "container-value": Object {
-    "type": "container-value",
+    "type": "container",
     "value": Object {
       "nested-container-value": Object {
-        "type": "container-value",
+        "type": "container",
         "value": Object {
           "nested-string": Object {
             "type": "string",
@@ -22,7 +22,7 @@ Object {
 exports[`Parses key-value-pairs correctly 1`] = `
 Object {
   "container-value": Object {
-    "type": "container-value",
+    "type": "container",
     "value": Object {
       "nested-string": Object {
         "type": "string",
@@ -38,7 +38,7 @@ Object {
     },
   },
   "number": Object {
-    "type": "numeric-value",
+    "type": "number",
     "value": 2,
   },
   "string": Object {
@@ -93,21 +93,21 @@ Object {
 exports[`Parses numeric-array-values correctly 1`] = `
 Object {
   "key1": Object {
-    "type": "numeric-array-value",
+    "type": "numeric-array",
     "value": Array [
       1,
       2,
     ],
   },
   "key2": Object {
-    "type": "numeric-array-value",
+    "type": "numeric-array",
     "value": Array [
       2,
       4,
     ],
   },
   "key3": Object {
-    "type": "numeric-array-value",
+    "type": "numeric-array",
     "value": Array [
       10,
       20,
@@ -121,23 +121,23 @@ Object {
 exports[`Parses numeric-values correctly 1`] = `
 Object {
   "key1": Object {
-    "type": "numeric-value",
+    "type": "number",
     "value": 1,
   },
   "key2": Object {
-    "type": "numeric-value",
+    "type": "number",
     "value": 2,
   },
   "key3": Object {
-    "type": "numeric-value",
+    "type": "number",
     "value": 2.5,
   },
   "key4": Object {
-    "type": "numeric-value",
+    "type": "number",
     "value": 20,
   },
   "key5": Object {
-    "type": "numeric-value",
+    "type": "number",
     "value": 12345.123456,
   },
 }

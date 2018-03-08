@@ -67,9 +67,9 @@ it('Parses kuid-values correctly', () => {
 
 it('Parses container-values correctly', () => {
     const containerValues = [
-        'container-value ',
+        'container-value',
         '{',
-        '  nested-container-value ',
+        '  nested-container-value',
         '  {',
         '    nested-string "Nested"',
         '  }',
@@ -86,7 +86,7 @@ it('Parses key-value-pairs correctly', () => {
         'kuid <kuid:123456:123456>',
         'string "Test"',
         'number 2',
-        'container-value ',
+        'container-value',
         '{',
         '  nested-string "Nested"',
         '}'
