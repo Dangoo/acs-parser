@@ -4,7 +4,7 @@ Parser for [ACS configuration files](http://online.ts2009.com/mediaWiki/index.ph
 ## Usage (node.js)
 ```javascript
 const fs = require('fs');
-const acsParser = require('../index');
+const acsParser = require('acs-parser');
 
 const configText = fs.readFileSync('./config.txt', 'utf8');
 const configData = acsParser.parse(configText);
