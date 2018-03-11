@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Parser for ACP configuration files",
   "main": "index.js",
-  "repository": "git@github.com:Dangoo/acs-parser.git",
+  "repository": "git@github.com:Dangoo/acs-tools.git",
   "author": "Daniel Gooß",
   "license": "MIT",
   "dependencies": {
