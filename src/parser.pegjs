@@ -15,7 +15,7 @@ start
   = acsTextFile
 
 acsTextFile
-  = pairs:keyValuePair* eol {
+  = bom? pairs:keyValuePair* eol {
   	return pairs.reduce(function(acc, item) {
       return Object.assign(acc, item);
     }, {});
@@ -121,10 +121,13 @@ lineStart "line-start"
   = (whitespace / eol)*
 
 eol "EOL"
-  = [\r\n] / [\r] / [\n]
+  = ([\r][\n]) / [\r] / [\n]
 
 eof "EOF"
   = !.
+
+bom "BOM"
+  = [\uFEFF]
 
 whitespace "whitespace"
   = singlewhitespace+
