@@ -11,7 +11,7 @@ Parser and generator for [ACS configuration files](http://online.ts2009.com/medi
 
 ```javascript
 const fs = require('fs');
-const acsParser = require('acs-acsTools').parser;
+const acsParser = require('acs-tools').parser;
 
 const configText = fs.readFileSync('./config.txt', 'utf8');
 const configData = acsParser.parse(configText);
@@ -55,8 +55,9 @@ const configData = acsParser.parse(configText);
 ### Output
 
 The ACS parser returns an object with the following structure:
+
 | type          | value |
-|---------------|-------|
+| ------------- | ----- |
 | null          | `null` |
 | number        | `number` |
 | numeric-array | `number[]` |
