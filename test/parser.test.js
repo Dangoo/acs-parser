@@ -1,5 +1,5 @@
 const acsParser = require('../index').parser;
-const acsGenerator = require('../index').generator;
+const acsGenerate = require('../index').generate;
 
 it('Parses null-values correctly', () => {
     const nullValues = [

@@ -13,7 +13,7 @@
     "jest": "^22.4.2"
   },
   "scripts": {
-    "compile": "pegjs -o index.js src/parser.pegjs && yarn test",
+    "compile": "pegjs -o lib/parser.js src/parser.pegjs && yarn test",
     "test": "jest",
     "postinstall": "yarn compile"
   },
