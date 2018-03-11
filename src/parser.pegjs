@@ -38,7 +38,7 @@ value "value"
 
 // Watch out, space between key and new-line required!
 containerValue "container-value"
-  = eol? whitespace? '{' eol pairs:keyValuePair+ lineStart '}' {
+  = eol? whitespace? '{' eol pairs:keyValuePair* lineStart '}' {
     return valueFormat(
       'container',
       pairs.reduce(function(acc, item) {

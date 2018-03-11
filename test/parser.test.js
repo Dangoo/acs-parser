@@ -1,4 +1,5 @@
-const acsParser = require('../index');
+const acsParser = require('../index').parser;
+const acsGenerator = require('../index').generator;
 
 it('Parses null-values correctly', () => {
     const nullValues = [
@@ -73,6 +74,18 @@ it('Parses container-values correctly', () => {
         '  {',
         '    nested-string "Nested"',
         '  }',
+        '}'
+    ].concat('\n').join('\n');
+
+    const parsed = acsParser.parse(containerValues);
+
+    expect(parsed).toMatchSnapshot();
+});
+
+it('Parses empty container-values correctly', () => {
+    const containerValues = [
+        'container-value',
+        '{',
         '}'
     ].concat('\n').join('\n');
 

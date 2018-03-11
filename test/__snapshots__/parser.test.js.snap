@@ -19,6 +19,15 @@ Object {
 }
 `;
 
+exports[`Parses empty container-values correctly 1`] = `
+Object {
+  "container-value": Object {
+    "type": "container",
+    "value": Object {},
+  },
+}
+`;
+
 exports[`Parses key-value-pairs correctly 1`] = `
 Object {
   "container-value": Object {
